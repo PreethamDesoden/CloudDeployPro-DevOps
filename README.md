@@ -167,7 +167,7 @@ This project demonstrates proficiency in:
 
 **Preetham B**
 - GitHub: [@PreethamDesoden](https://github.com/PreethamDesoden)
-- LinkedIn: [preetham-b](https://linkedin.com/in/preetham-b)
+- LinkedIn: [Preetham-B](https://linkedin.com/in/preetham-b-)
 - Email: preethamdesoden25983@gmail.com
 
 ## 📄 License
