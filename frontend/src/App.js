@@ -13,7 +13,7 @@ function App() {
 
   const fetchTasks = async () => {
     try {
-      const response = await fetch('http://localhost:5000/tasks');
+      const response = await fetch('http://54.196.126.155:5000/tasks');
       const data = await response.json();
       setTasks(data);
       setLoading(false);
@@ -27,7 +27,7 @@ function App() {
     if (newTask.trim() === '') return;
 
     try {
-      const response = await fetch('http://localhost:5000/tasks', {
+      const response = await fetch('http://54.196.126.155:5000/tasks', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
