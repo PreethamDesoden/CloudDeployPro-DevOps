@@ -12,7 +12,7 @@ tasks = [
 
 @app.route('/')
 def home():
-    return jsonify({"message": "CloudDeployPro API is running!"})
+    return jsonify({"message": "CloudDeployPro API is running! - CI/CD Automated"})
 
 @app.route('/tasks', methods=['GET'])
 def get_tasks():

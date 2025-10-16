@@ -1,9 +1,6 @@
 # CloudDeployPro - DevOps Portfolio Project
 
-![Project Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
-![Docker](https://img.shields.io/badge/Docker-Ready-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
-
+![CI/CD](https://github.com/PreethamDesoden/CloudDeployPro-DevOps/actions/workflows/docker-build.yml/badge.svg)
 A full-stack task manager application demonstrating modern DevOps practices including containerization, CI/CD pipelines, and cloud deployment.
 
 ## 🚀 Project Overview
