@@ -1,0 +1,180 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">
+    CloudDeployPro - DevOps Architecture
+  </text>
+  
+  <!-- Developer Section -->
+  <rect x="50" y="60" width="180" height="120" rx="10" fill="#667eea" stroke="#5568d3" stroke-width="2"/>
+  <text x="140" y="85" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    Developer
+  </text>
+  <text x="140" y="110" font-size="13" text-anchor="middle" fill="white">
+    Edit Code
+  </text>
+  <text x="140" y="130" font-size="13" text-anchor="middle" fill="white">
+    ↓
+  </text>
+  <text x="140" y="150" font-size="13" text-anchor="middle" fill="white">
+    git push
+  </text>
+  <circle cx="140" cy="165" r="8" fill="white"/>
+  
+  <!-- Arrow to GitHub -->
+  <path d="M 230 120 L 290 120" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- GitHub Section -->
+  <rect x="290" y="60" width="220" height="220" rx="10" fill="#24292e" stroke="#1b1f23" stroke-width="2"/>
+  <text x="400" y="85" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    GitHub Repository
+  </text>
+  
+  <!-- GitHub Actions Box -->
+  <rect x="310" y="100" width="180" height="160" rx="8" fill="#2088ff" stroke="#0366d6" stroke-width="2"/>
+  <text x="400" y="120" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    GitHub Actions CI/CD
+  </text>
+  
+  <text x="315" y="145" font-size="12" text-anchor="start" fill="white">
+    ✓ Checkout code
+  </text>
+  <text x="315" y="165" font-size="12" text-anchor="start" fill="white">
+    ✓ Build Docker images
+  </text>
+  <text x="315" y="185" font-size="12" text-anchor="start" fill="white">
+    ✓ Run tests
+  </text>
+  <text x="315" y="205" font-size="12" text-anchor="start" fill="white">
+    ✓ Push to registries
+  </text>
+  <text x="315" y="235" font-size="11" text-anchor="start" fill="white" font-style="italic">
+    Automated on every push
+  </text>
+  
+  <!-- Arrow to Docker Hub -->
+  <path d="M 510 170 L 570 170" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Docker Hub Section -->
+  <rect x="570" y="60" width="180" height="120" rx="10" fill="#0db7ed" stroke="#0099cc" stroke-width="2"/>
+  <text x="660" y="85" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+    Docker Hub
+  </text>
+  <rect x="590" y="100" width="140" height="30" rx="5" fill="white" fill-opacity="0.2"/>
+  <text x="660" y="120" font-size="12" text-anchor="middle" fill="white">
+    backend:latest
+  </text>
+  <rect x="590" y="140" width="140" height="30" rx="5" fill="white" fill-opacity="0.2"/>
+  <text x="660" y="160" font-size="12" text-anchor="middle" fill="white">
+    frontend:latest
+  </text>
+  
+  <!-- AWS Cloud Box -->
+  <rect x="50" y="320" width="700" height="240" rx="10" fill="#FF9900" stroke="#ec7211" stroke-width="3"/>
+  <text x="400" y="345" font-size="18" font-weight="bold" text-anchor="middle" fill="white">
+    AWS Cloud (us-east-1)
+  </text>
+  
+  <!-- Terraform -->
+  <rect x="70" y="360" width="140" height="80" rx="8" fill="#623ce4" stroke="#5c4ee5" stroke-width="2"/>
+  <text x="140" y="385" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    Terraform
+  </text>
+  <text x="140" y="405" font-size="11" text-anchor="middle" fill="white">
+    Infrastructure
+  </text>
+  <text x="140" y="420" font-size="11" text-anchor="middle" fill="white">
+    as Code
+  </text>
+  
+  <!-- Arrow from Terraform to EC2 -->
+  <path d="M 210 400 L 250 400" stroke="white" stroke-width="2" fill="none" marker-end="url(#arrowhead-white)"/>
+  
+  <!-- EC2 Instance Box -->
+  <rect x="250" y="360" width="480" height="180" rx="8" fill="#232f3e" stroke="#1a242f" stroke-width="2"/>
+  <text x="490" y="385" font-size="16" font-weight="bold" text-anchor="middle" fill="#FF9900">
+    EC2 Instance (t2.micro)
+  </text>
+  
+  <!-- Security Group -->
+  <rect x="270" y="395" width="200" height="130" rx="6" fill="#545b64" stroke="#414750" stroke-width="2"/>
+  <text x="370" y="415" font-size="13" font-weight="bold" text-anchor="middle" fill="white">
+    Security Group
+  </text>
+  <text x="280" y="435" font-size="11" text-anchor="start" fill="#7ee081">
+    ✓ Port 22 (SSH)
+  </text>
+  <text x="280" y="455" font-size="11" text-anchor="start" fill="#7ee081">
+    ✓ Port 3000 (Frontend)
+  </text>
+  <text x="280" y="475" font-size="11" text-anchor="start" fill="#7ee081">
+    ✓ Port 5000 (Backend)
+  </text>
+  <text x="280" y="505" font-size="11" text-anchor="start" fill="white" font-style="italic">
+    Docker Containers
+  </text>
+  
+  <!-- Docker Containers -->
+  <rect x="490" y="395" width="220" height="65" rx="6" fill="#0db7ed" stroke="#0099cc" stroke-width="2"/>
+  <text x="600" y="415" font-size="13" font-weight="bold" text-anchor="middle" fill="white">
+    Frontend Container
+  </text>
+  <text x="600" y="435" font-size="11" text-anchor="middle" fill="white">
+    React App (Port 3000)
+  </text>
+  <text x="600" y="450" font-size="10" text-anchor="middle" fill="white" font-style="italic">
+    preetham1210/frontend:latest
+  </text>
+  
+  <rect x="490" y="470" width="220" height="65" rx="6" fill="#0db7ed" stroke="#0099cc" stroke-width="2"/>
+  <text x="600" y="490" font-size="13" font-weight="bold" text-anchor="middle" fill="white">
+    Backend Container
+  </text>
+  <text x="600" y="510" font-size="11" text-anchor="middle" fill="white">
+    Flask API (Port 5000)
+  </text>
+  <text x="600" y="525" font-size="10" text-anchor="middle" fill="white" font-style="italic">
+    preetham1210/backend:latest
+  </text>
+  
+  <!-- Arrow from Docker Hub to EC2 -->
+  <path d="M 660 180 L 660 280 L 490 280 L 490 360" stroke="#0db7ed" stroke-width="2" stroke-dasharray="5,5" fill="none" marker-end="url(#arrowhead-blue)"/>
+  <text x="550" y="275" font-size="11" text-anchor="middle" fill="#0db7ed">
+    docker pull
+  </text>
+  
+  <!-- Users -->
+  <ellipse cx="400" cy="580" rx="40" ry="20" fill="#667eea" stroke="#5568d3" stroke-width="2"/>
+  <text x="400" y="585" font-size="13" font-weight="bold" text-anchor="middle" fill="white">
+    Users
+  </text>
+  
+  <!-- Arrow from Users to Frontend -->
+  <path d="M 440 575 L 590 480" stroke="#667eea" stroke-width="2" fill="none" marker-end="url(#arrowhead-purple)"/>
+  <text x="520" y="520" font-size="11" text-anchor="middle" fill="#667eea">
+    http://IP:3000
+  </text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333"/>
+    </marker>
+    <marker id="arrowhead-white" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="white"/>
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#0db7ed"/>
+    </marker>
+    <marker id="arrowhead-purple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#667eea"/>
+    </marker>
+  </defs>
+  
+  <!-- Legend -->
+  <text x="50" y="595" font-size="10" text-anchor="start" fill="#666" font-style="italic">
+    Full DevOps Pipeline: Code → CI/CD → Container Registry → Cloud Deployment
+  </text>
+</svg>

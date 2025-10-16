@@ -7,6 +7,29 @@ A full-stack task manager application demonstrating modern DevOps practices incl
 
 **CloudDeployPro** is a professional portfolio project showcasing end-to-end DevOps skills from development to deployment. Built with React and Flask, containerized with Docker, and designed for AWS deployment with Infrastructure as Code.
 
+## 📐 Architecture
+
+![CloudDeployPro Architecture](./images/architecture.svg)
+
+### System Components:
+
+**Development Flow:**
+1. Developer pushes code to GitHub
+2. GitHub Actions CI/CD triggers automatically
+3. Builds Docker images for frontend and backend
+4. Pushes images to Docker Hub
+
+**Infrastructure (AWS):**
+- **Terraform:** Provisions infrastructure as code
+- **EC2 Instance:** t2.micro (Free Tier eligible)
+- **Security Groups:** Configured for ports 22, 3000, 5000
+- **Docker Containers:** Frontend (React) and Backend (Flask)
+
+**Deployment:**
+- Images pulled from Docker Hub to EC2
+- Containers orchestrated with Docker
+- Publicly accessible via HTTP
+
 ### 🌐 **Live Deployment**
 
 **This application has been successfully deployed to AWS and can be made available for live demonstration upon request.**
