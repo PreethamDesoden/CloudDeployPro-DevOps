@@ -30,9 +30,9 @@ The deployment includes:
 - ✅ RESTful API architecture
 - ✅ Containerized with Docker
 - ✅ Multi-container orchestration with Docker Compose
-- 🔄 CI/CD pipeline (coming soon)
-- ☁️ AWS deployment (coming soon)
-- 📊 Monitoring & logging (coming soon)
+- 🔄 CI/CD pipeline 
+- ☁️ AWS deployment 
+- 📊 Monitoring & logging
 
 ## 🛠️ Tech Stack
 
@@ -50,9 +50,9 @@ The deployment includes:
 - Docker & Docker Compose
 - GitHub for version control
 - Docker Hub for image registry
-- Terraform (planned)
-- GitHub Actions (planned)
-- AWS (EC2/ECS) (planned)
+- Terraform 
+- GitHub Actions 
+- AWS (EC2)
 
 ## 📁 Project Structure
 
@@ -71,6 +71,8 @@ CloudDeployPro-DevOps/
 │   ├── Dockerfile          # Frontend container config
 │   └── .dockerignore
 ├── docker-compose.yml      # Multi-container orchestration
+├── terraform
+├── .github
 ├── .gitignore
 └── README.md
 ```
@@ -157,13 +159,13 @@ This project demonstrates proficiency in:
 3. **DevOps Practices**
    - Version control with Git
    - Container registries
-   - Infrastructure as Code (planned)
-   - CI/CD automation (planned)
+   - Infrastructure as Code 
+   - CI/CD automation 
 
 4. **Cloud Deployment**
-   - AWS services (planned)
-   - Scalable architecture (planned)
-   - Monitoring & observability (planned)
+   - AWS services 
+   - Scalable architecture 
+   - Monitoring & observability 
 
 ## 📋 Roadmap
 
@@ -171,12 +173,12 @@ This project demonstrates proficiency in:
 - [x] Dockerize backend and frontend
 - [x] Docker Compose setup
 - [x] Push to Docker Hub
-- [ ] Write Terraform scripts for AWS infrastructure
-- [ ] Deploy to AWS (EC2/ECS)
-- [ ] Implement CI/CD with GitHub Actions
-- [ ] Add monitoring with CloudWatch/Grafana
-- [ ] Set up automated testing
-- [ ] Add SSL/HTTPS
+- [x] Write Terraform scripts for AWS infrastructure
+- [x] Deploy to AWS (EC2/ECS)
+- [x] Implement CI/CD with GitHub Actions
+- [x] Add monitoring with CloudWatch/Grafana
+- [x] Set up automated testing
+- [x] Add SSL/HTTPS
 
 ## 👨‍💻 Author
 
