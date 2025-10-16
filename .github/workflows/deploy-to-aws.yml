@@ -1,0 +1,115 @@
+name: Deploy to AWS
+
+on:
+  workflow_dispatch:  # Manual trigger only
+    inputs:
+      action:
+        description: 'Deployment action'
+        required: true
+        default: 'deploy'
+        type: choice
+        options:
+        - deploy
+        - stop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.action == 'deploy'
+    
+    steps:
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+    
+    - name: Get EC2 instance info
+      id: ec2-info
+      run: |
+        INSTANCE_ID=$(aws ec2 describe-instances \
+          --filters "Name=tag:Name,Values=clouddeploypro-server" \
+          --query "Reservations[0].Instances[0].InstanceId" \
+          --output text)
+        echo "instance_id=$INSTANCE_ID" >> $GITHUB_OUTPUT
+        
+        STATE=$(aws ec2 describe-instances \
+          --instance-ids $INSTANCE_ID \
+          --query "Reservations[0].Instances[0].State.Name" \
+          --output text)
+        echo "state=$STATE" >> $GITHUB_OUTPUT
+    
+    - name: Start EC2 instance if stopped
+      if: steps.ec2-info.outputs.state == 'stopped'
+      run: |
+        aws ec2 start-instances --instance-ids ${{ steps.ec2-info.outputs.instance_id }}
+        aws ec2 wait instance-running --instance-ids ${{ steps.ec2-info.outputs.instance_id }}
+        echo "Instance started successfully"
+    
+    - name: Get public IP
+      id: get-ip
+      run: |
+        PUBLIC_IP=$(aws ec2 describe-instances \
+          --instance-ids ${{ steps.ec2-info.outputs.instance_id }} \
+          --query "Reservations[0].Instances[0].PublicIpAddress" \
+          --output text)
+        echo "public_ip=$PUBLIC_IP" >> $GITHUB_OUTPUT
+        echo "Public IP: $PUBLIC_IP"
+    
+    - name: Wait for instance to be ready
+      run: |
+        echo "Waiting for instance to be fully ready..."
+        sleep 60
+    
+    - name: Deploy containers via SSH
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ steps.get-ip.outputs.public_ip }}
+        username: ec2-user
+        key: ${{ secrets.EC2_SSH_KEY }}
+        script: |
+          # Start Docker if not running
+          sudo service docker start
+          
+          # Pull latest images
+          sudo docker pull preetham1210/clouddeploypro-backend:latest
+          sudo docker pull preetham1210/clouddeploypro-frontend:latest
+          
+          # Stop and remove old containers
+          sudo docker stop backend frontend || true
+          sudo docker rm backend frontend || true
+          
+          # Run new containers
+          sudo docker run -d -p 5000:5000 --name backend preetham1210/clouddeploypro-backend:latest
+          sudo docker run -d -p 3000:3000 --name frontend preetham1210/clouddeploypro-frontend:latest
+          
+          echo "Deployment complete!"
+    
+    - name: Output URLs
+      run: |
+        echo "🎉 Deployment successful!"
+        echo "Frontend: http://${{ steps.get-ip.outputs.public_ip }}:3000"
+        echo "Backend: http://${{ steps.get-ip.outputs.public_ip }}:5000"
+  
+  stop:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.action == 'stop'
+    
+    steps:
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+    
+    - name: Stop EC2 instance
+      run: |
+        INSTANCE_ID=$(aws ec2 describe-instances \
+          --filters "Name=tag:Name,Values=clouddeploypro-server" \
+          --query "Reservations[0].Instances[0].InstanceId" \
+          --output text)
+        
+        aws ec2 stop-instances --instance-ids $INSTANCE_ID
+        echo "Instance stopped to conserve resources"
