@@ -48,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>CloudDeployPro Task Manager</h1>
+        <h1>CloudDeployPro - Full CI/CD Pipeline ✅</h1>
         <p className="subtitle">Full-Stack App with DevOps Pipeline</p>
 
         <div className="add-task">
