@@ -241,6 +241,13 @@ This project demonstrates proficiency in:
 - [ ] Set up automated testing (future enhancement)
 - [ ] Add SSL/HTTPS (future enhancement)
 
+## Output
+
+images/Screenshot 2025-10-17 073908.png
+images/Screenshot 2025-10-17 073957.png
+images/Screenshot 2025-10-17 074023.png
+images/Screenshot 2025-10-17 074041.png
+
 ## 👨‍💻 Author
 
 **Preetham B**
