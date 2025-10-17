@@ -1,6 +1,7 @@
 # CloudDeployPro - DevOps Portfolio Project
 
-![CI/CD](https://github.com/PreethamDesoden/CloudDeployPro-DevOps/actions/workflows/docker-build.yml/badge.svg)
+![CI Build](https://github.com/PreethamDesoden/CloudDeployPro-DevOps/actions/workflows/docker-build.yml/badge.svg)
+![CD Deploy](https://github.com/PreethamDesoden/CloudDeployPro-DevOps/actions/workflows/deploy-to-aws.yml/badge.svg)
 A full-stack task manager application demonstrating modern DevOps practices including containerization, CI/CD pipelines, and cloud deployment.
 
 ## 🚀 Project Overview
@@ -148,6 +149,40 @@ docker run -d -p 5000:5000 --name backend preetham1210/clouddeploypro-backend:la
 docker run -d -p 3000:3000 --name frontend preetham1210/clouddeploypro-frontend:latest
 ```
 
+## 🚀 CI/CD Pipeline
+
+This project features a complete automated CI/CD pipeline!
+
+### Continuous Integration (Automatic)
+Every push to `main` branch automatically:
+- ✅ Builds Docker images
+- ✅ Runs quality checks
+- ✅ Pushes to Docker Hub
+
+### Continuous Deployment (One-Click)
+Deploy or stop your AWS infrastructure with a single click:
+
+**To Deploy:**
+1. Go to [Actions](https://github.com/PreethamDesoden/CloudDeployPro-DevOps/actions)
+2. Select "Deploy to AWS"
+3. Click "Run workflow" → Choose "deploy"
+4. App goes live in 3-5 minutes!
+
+**To Stop (Save Resources):**
+1. Same workflow
+2. Choose "stop" instead
+3. EC2 instance stops automatically
+
+**No manual AWS console work needed!**
+
+### Pipeline Features
+- 🔄 Automated builds on code changes
+- 🐳 Docker image versioning
+- ☁️ Infrastructure automation with Terraform
+- 🔐 Secure credential management with GitHub Secrets
+- 💰 Cost-controlled deployment (manual triggers)
+- 📊 Full deployment visibility and logs
+
 ## 📡 API Endpoints
 
 ### Base URL: `http://localhost:5000`
@@ -196,12 +231,15 @@ This project demonstrates proficiency in:
 - [x] Dockerize backend and frontend
 - [x] Docker Compose setup
 - [x] Push to Docker Hub
-- [x] Write Terraform scripts for AWS infrastructure
-- [x] Deploy to AWS (EC2/ECS)
-- [x] Implement CI/CD with GitHub Actions
-- [x] Add monitoring with CloudWatch/Grafana
-- [x] Set up automated testing
-- [x] Add SSL/HTTPS
+- [x] Write Terraform scripts for AWS infrastructure 
+- [x] Deploy to AWS (EC2) 
+- [x] Implement CI/CD with GitHub Actions 
+- [x] Automated Docker builds on every push 
+- [x] One-click deployment to AWS 
+- [x] Automated instance management (start/stop) 
+- [ ] Add monitoring with CloudWatch/Grafana (future enhancement)
+- [ ] Set up automated testing (future enhancement)
+- [ ] Add SSL/HTTPS (future enhancement)
 
 ## 👨‍💻 Author
 
