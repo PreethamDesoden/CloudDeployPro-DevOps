@@ -243,10 +243,7 @@ This project demonstrates proficiency in:
 
 ## Output
 
-<img width="1919" height="923" alt="Image" src="https://github.com/user-attachments/assets/f911b2e7-f24a-4567-8821-2627f1785d25" />
-<img width="1904" height="942" alt="Image" src="https://github.com/user-attachments/assets/31c0c34b-975a-4fd0-928a-6a168e691599" />
-<img width="1899" height="939" alt="Image" src="https://github.com/user-attachments/assets/2217dea6-b9f0-414d-a032-a5271817d70a" />
-<img width="1913" height="946" alt="Image" src="https://github.com/user-attachments/assets/fd348ea1-e7f0-42bc-a0b1-00393f6ae91d" />
+
 
 ## 👨‍💻 Author
 
