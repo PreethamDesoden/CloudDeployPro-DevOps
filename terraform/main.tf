@@ -47,10 +47,11 @@ resource "aws_security_group" "app_sg" {
 
 # Create EC2 Instance
 resource "aws_instance" "app_server" {
-  ami           = "ami-091d7d61336a4c68f"  # Amazon Linux 2 AMI (free tier)
-  instance_type = "t2.micro"               # Free tier eligible
-  
-  security_groups = [aws_security_group.app_sg.name]
+  ami                    = "ami-091d7d61336a4c68f"  # Amazon Linux 2 AMI (free tier)
+  instance_type          = "t2.micro"               # Free tier eligible
+  security_groups        = [aws_security_group.app_sg.name]
+  key_name               = "ec2-github-actions"    # Attach existing key pair
+  associate_public_ip_address = true                 # Ensure public IP is assigned
 
   # User data script to install Docker
   user_data = <<-EOF
