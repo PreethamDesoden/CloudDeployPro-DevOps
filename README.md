@@ -243,7 +243,13 @@ This project demonstrates proficiency in:
 
 ## Output
 
+![Screenshot 1](images/Screenshot%202025-10-17%20073908.png)
 
+![Screenshot 2](images/Screenshot%202025-10-17%20073957.png)
+
+![Screenshot 3](images/Screenshot%202025-10-17%20074023.png)
+
+![Screenshot 4](images/Screenshot%202025-10-17%20074041.png)
 
 ## 👨‍💻 Author
 
