@@ -104,8 +104,8 @@ CloudDeployPro-DevOps/
 ## 🐳 Docker Images
 
 Public Docker images available on Docker Hub:
-- **Backend**: `preetham1210/clouddeploypro-backend:latest`
-- **Frontend**: `preetham1210/clouddeploypro-frontend:latest`
+- **Backend**: `preetham1210/clouddeploypro-backend:latest` (~180MB, optimized with multi-stage builds)
+- **Frontend**: `preetham1210/clouddeploypro-frontend:latest` (~2000MB, optimized with multi-stage builds)
 
 ## 🚀 Quick Start
 
