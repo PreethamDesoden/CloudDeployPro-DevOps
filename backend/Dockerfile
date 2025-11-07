@@ -1,20 +1,31 @@
-# Use Python 3.12 as base image
-FROM python:3.12-slim
+# ============================================
+# STAGE 1: Install dependencies
+# ============================================
+FROM python:3.12-slim AS builder
 
-# Set working directory inside container
 WORKDIR /app
 
-# Copy requirements first (for better caching)
+# Copy requirements file
 COPY requirements.txt .
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# Install dependencies to a temporary location
+RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
 
-# Copy the rest of the application code
-COPY . .
+# ============================================
+# STAGE 2: Production runtime
+# ============================================
+FROM python:3.12-slim
 
-# Expose port 5000
+WORKDIR /app
+
+# Copy installed dependencies from stage 1
+COPY --from=builder /install /usr/local
+
+# Copy application code
+COPY app.py .
+
+# Expose port
 EXPOSE 5000
 
-# Run the Flask app
+# Run the application
 CMD ["python", "app.py"]
